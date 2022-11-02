@@ -9,16 +9,27 @@ void main() {
       home: Scaffold(
         appBar: Headerbar(),
         drawer: Sidemenu(),
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-              NewsCard(),
-              NewsCard(),
-              NewsCard(),
-              NewsCard(),
-              NewsCard(),
-            ])),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              child: Text('  Suggestion',
+                  style: TextStyle(
+                    color: Color.fromRGBO(50, 48, 45, 1),
+                    fontSize: 42,
+                  )),
+            ),
+            Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                  NewsCard(),
+                  NewsCard(),
+                  NewsCard(),
+                  NewsCard(),
+                ])),
+          ],
+        ),
       ));
   runApp(app);
 }

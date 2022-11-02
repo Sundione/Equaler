@@ -9,8 +9,8 @@ class Headerbar extends StatelessWidget with PreferredSizeWidget {
           child: Text('Equaler',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Color.fromRGBO(50, 48, 45, 1),
-              )),
+                  color: Color.fromRGBO(50, 48, 45, 1),
+                  fontWeight: FontWeight.bold)),
           width: 378,
         )),
         actions: [

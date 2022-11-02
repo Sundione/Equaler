@@ -1,8 +1,8 @@
-version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
-options: "00621c43d2d7ea164ace3ffbc2d61f315d204752e1ea87e7fb398f9426bb5d54"
-build_start_time: [1667120879, 136234998]
-build_end_time: [1667120882, 287457942]
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "a1249e5c192317a361a5989fb713aee56da546568cbc8524016c733a2e9c272b"
+build_start_time: [1667397945, 606523990]
+build_end_time: [1667397951, 32041072]
 inputs:
-  "/Users/puthchy/Documents/Equaler/Equaler/macos/Flutter/GeneratedPluginRegistrant.swift": [1667120866, 572503328]
+  "/Users/puthchy/Documents/Equaler/Equaler/macos/Flutter/GeneratedPluginRegistrant.swift": [1667397925, 258923053]
   "/Users/puthchy/Documents/Equaler/Equaler/macos/Runner/AppDelegate.swift": [1667029279, 302550792]
   "/Users/puthchy/Documents/Equaler/Equaler/macos/Runner/MainFlutterWindow.swift": [1667029279, 306778430]
