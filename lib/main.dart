@@ -4,6 +4,7 @@ import 'components/menubar.dart';
 import 'components/NewsCard.dart';
 import 'components/BigNewsCard.dart';
 import 'components/SectionTitle.dart';
+import 'models/news.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:core';
