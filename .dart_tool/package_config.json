@@ -116,6 +116,12 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/ASUS/Desktop/Flutter/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "json_annotation",
       "rootUri": "file:///C:/Users/ASUS/Desktop/Flutter/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.7.0",
       "packageUri": "lib/",
@@ -230,7 +236,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-11-13T14:51:21.942921Z",
+  "generated": "2022-11-19T16:13:30.228467Z",
   "generator": "pub",
   "generatorVersion": "2.18.4"
 }

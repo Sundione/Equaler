@@ -8,7 +8,7 @@ class BigNewsCard extends StatelessWidget {
   final String newsDate;
 
   BigNewsCard(
-      {this.imgUrl = "https://picsum.photos/seed/137/600",
+      {this.imgUrl = "https://comnplayscience.eu/app/images/notfound.png",
       this.newsTitle = "This is news title",
       this.newsDate = "This is news date"});
 
@@ -18,7 +18,7 @@ class BigNewsCard extends StatelessWidget {
       onTap: () => {},
       child: Container(
         width: MediaQuery.of(context).size.width * 0.9,
-        height: MediaQuery.of(context).size.height * 0.2,
+        height: MediaQuery.of(context).size.height * 0.25,
         margin: EdgeInsets.symmetric(vertical: 5),
         child: Card(
           shape: RoundedRectangleBorder(
