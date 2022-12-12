@@ -18,7 +18,7 @@ class ReadNews extends StatefulWidget {
       this.newsContent1 = "This is news content",
       this.newsDesc1 = "This is news description"});
 //==============================================================
-  
+
   @override
   State<ReadNews> createState() => _ReadNewsState();
 }
@@ -27,6 +27,8 @@ class _ReadNewsState extends State<ReadNews> {
   final FlutterTts flutterTts = FlutterTts(); //Instantiate FlutterTts
   final TextEditingController textEditingController = TextEditingController();
 
+  bool _isListening = false;
+
   speak(String text) async {
     //Setting Text to Speech
     await flutterTts.setLanguage("en-US");
@@ -34,16 +36,21 @@ class _ReadNewsState extends State<ReadNews> {
     await flutterTts.speak(text);
   }
 
+  pause(String text) async {
+    await flutterTts.pause();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: Headerbar(
-          headerTitle: 'Read News',
-        ),
-        body: LayoutBuilder(builder: (ctx, constraints) {
-          return SingleChildScrollView(
-             //Displays news images, dates and news content vertically
-            child: Column(children: [
+      appBar: Headerbar(
+        headerTitle: 'Read News',
+      ),
+      body: LayoutBuilder(builder: (ctx, constraints) {
+        return SingleChildScrollView(
+          //Displays news images, dates and news content vertically
+          child: Column(
+            children: [
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Text(widget.newsTitle1,
@@ -52,7 +59,8 @@ class _ReadNewsState extends State<ReadNews> {
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.network( //Display news iamge
+                child: Image.network(
+                  //Display news iamge
                   widget.imgUrl1,
                   width: constraints.maxWidth * 0.9,
                   height: constraints.maxHeight * 0.30,
@@ -60,7 +68,7 @@ class _ReadNewsState extends State<ReadNews> {
                 ),
               ),
               Padding(
-                //Format the text of the news 
+                //Format the text of the news
                 padding: const EdgeInsets.only(
                     left: 20, right: 20, top: 20, bottom: 10),
                 child: Align(
@@ -82,20 +90,36 @@ class _ReadNewsState extends State<ReadNews> {
                               widget.newsContent1, //Display news content
                               style: const TextStyle(fontSize: 18),
                             ),
-                            onDoubleTap: () {
-                              //When user double tap on Text, speak news content
-                              speak(widget.newsContent1);
-                            },
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ),
               ),
-            ]),
-          );
-        }));
+            ],
+          ),
+        );
+      }),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            if (_isListening == false) {
+              speak(widget.newsContent1);
+              _isListening = true;
+            } else if (_isListening == true) {
+              pause(widget.newsContent1);
+              _isListening = false;
+            }
+          });
+        },
+        child: Icon((_isListening == false)
+            ? Icons.play_circle_fill_rounded
+            : Icons.stop_rounded),
+        backgroundColor: Colors.pink,
+      ),
+    );
   }
 
   @override
