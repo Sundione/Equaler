@@ -37,7 +37,7 @@ class _ReadNewsState extends State<ReadNews> {
   }
 
   pauseMethod(String text) async {
-    //pause text
+    //stop text to speech
     await flutterTts.pause();
   }
 
@@ -111,7 +111,7 @@ class _ReadNewsState extends State<ReadNews> {
               speakMethod(widget.newsContent);
               _isListening = true;
             } else if (_isListening == true) {
-              //pause text to speech
+              //stop text to speech
               pauseMethod(widget.newsContent);
               _isListening = false;
             }
